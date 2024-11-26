@@ -6,6 +6,15 @@ This Burp extension solves this problem
 
 # Installation
 
+This now depends on xercesImpl.jar. For it to work, find the `BurpSuiteCommunity` shell script and using the `add_class_path`, add the jar to the path, like this:
+```
+local_classpath=""
+i4j_classpath="$app_home/.install4j/i4jruntime.jar:$app_home/.install4j/launcher5925f5b4.jar"
+add_class_path "$i4j_classpath"
+add_class_path "$app_home/burpsuite_community.jar"
+add_class_path "/path/to/xercesImpl.jar"
+```
+
 1. Download/Clone this source to your computer.
 2. In your Burp, go to `Extender` tab > `Options` > `Python Environment` and locate `jython-standalone-2.7.2.jar` location
 3. In your Burp, go to `Extender` tab > `Extensions` > `Burp Extensions` > `Add` > Choose Python in `Extension type` and locate `main.py` location
